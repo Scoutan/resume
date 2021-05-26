@@ -2,6 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import WorkEd from '../components/WorkEd'
+import ContactForm from '../components/ContactForm'
 //import styles from '../../styles/Home.module.css'
 import {
   makeStyles,
@@ -135,6 +136,13 @@ export default function Home() {
                 <Card className={classes.card}>
                   <CardContent>
                     <WorkEd />
+                  </CardContent>
+                </Card>
+              </Grid>
+              <Grid item xs={12}>
+                <Card className={classes.card}>
+                  <CardContent>
+                    <ContactForm />
                   </CardContent>
                 </Card>
               </Grid>
