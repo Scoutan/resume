@@ -3,6 +3,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import WorkEd from '../components/WorkEd'
 import ContactForm from '../components/ContactForm'
+import Skills from '../components/Skills'
+import Projects from '../components/Projects'
 //import styles from '../../styles/Home.module.css'
 import {
   makeStyles,
@@ -10,15 +12,8 @@ import {
   Container,
   Grid,
   Paper,
-  Card, CardContent,
-  List, ListItem, ListItemAvatar, ListItemText,
-  Avatar,
-  Divider
+  Card, CardContent
 } from '@material-ui/core'
-import {
-  DeveloperMode,
-  Apps
-} from '@material-ui/icons'
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -62,75 +57,11 @@ export default function Home() {
                   </CardContent>
                 </Card>
               </Grid>
-              <Grid item xs={12} sm={4}>
-                <Card className={classes.card}>
-                  <CardContent>
-                    <DeveloperMode color="primary" fontSize="large" /> Web Development Skills
-                    <List>
-                      <ListItem>
-                        <ListItemAvatar>
-                          <Avatar alt="React logo" src="/React-icon.svg" />
-                        </ListItemAvatar>
-                        <ListItemText primary="React JS" secondary="Since September 2020" />
-                      </ListItem>
-                      <Divider variant="inset" component="li" />
-                      <ListItem>
-                        <ListItemAvatar>
-                          <Avatar alt="CSS3 logo" src="/CSS3-icon.svg" />
-                        </ListItemAvatar>
-                        <ListItemText primary="CSS" secondary="Refreshed since March 2021" />
-                      </ListItem>
-                      <Divider variant="inset" component="li" />
-                      <ListItem>
-                        <ListItemAvatar>
-                          <Avatar>
-                            Img
-                          </Avatar>
-                        </ListItemAvatar>
-                        <ListItemText primary="title" secondary="description" />
-                      </ListItem>
-                    </List>
-                  </CardContent>
-                </Card>
+              <Grid item xs={12}>
+                <Projects /> 
               </Grid>
-              <Grid item xs={12} sm={8}>
-                <Card className={classes.card}>
-                  <CardContent>
-                    <Apps color="primary" fontSize="large" /> Projects
-                    <List>
-                      <a
-                        href="https://chuko-cra.vercel.app/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <ListItem>
-                          <ListItemAvatar>
-                            <Avatar alt="Chuko">
-                              C
-                            </Avatar>
-                          </ListItemAvatar>
-                          <ListItemText primary="Chuko" secondary="My personal React project!" />
-                        </ListItem>
-                      </a>
-                      <Divider variant="inset" component="li" />
-                      <a
-                        href="https://stephen-grider.vercel.app/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <ListItem>
-                          <ListItemAvatar>
-                            <Avatar alt="Compilation of apps">
-                              C
-                            </Avatar>
-                          </ListItemAvatar>
-                          <ListItemText primary="Compilation of apps" secondary="From Stephen Grider's React/Redux course" />
-                        </ListItem>
-                      </a>
-                      <Divider variant="inset" component="li" />
-                    </List>
-                  </CardContent>
-                </Card>
+              <Grid item xs={12}>                
+                <Skills />              
               </Grid>
               <Grid item xs={12}>
                 <Card className={classes.card}>
