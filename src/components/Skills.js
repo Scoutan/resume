@@ -36,11 +36,11 @@ export default function Skills() {
             <CardContent>
                 <Grid
                 container
-                spacing={3}
+                spacing={2}
                 justify="space-evenly"
                 alignItems="flex-start"
                 >
-                    <Grid item xs={12} sm={4}>            
+                    <Grid item sm={12} md={5}>            
                         <List>
                             <ListItem>
                                 <ListItemAvatar>
@@ -72,7 +72,7 @@ export default function Skills() {
                             <Divider variant="inset" component="li" />
                         </List>
                     </Grid>
-                    <Grid item xs={12} sm={4}>            
+                    <Grid item sm={12} md={5}>            
                         <List>
                             <ListItem>
                                 <ListItemAvatar>
@@ -154,7 +154,7 @@ export default function Skills() {
                             <Divider variant="inset" component="li" />
                         </List>
                     </Grid>                    
-                    <Grid item xs={12} sm={4}>            
+                    <Grid item sm={12} md={4}>            
                         <List>
                             <ListItem>
                                 <ListItemAvatar>
@@ -197,7 +197,7 @@ export default function Skills() {
                             <Divider variant="inset" component="li" />                            
                         </List>
                     </Grid>
-                    <Grid item xs={12} sm={4}>            
+                    <Grid item sm={12} md={4}>            
                         <List>
                             <ListItem>
                                 <ListItemAvatar>
@@ -222,7 +222,7 @@ export default function Skills() {
                             <Divider variant="inset" component="li" />                                                      
                         </List>
                     </Grid>
-                    <Grid item xs={12} sm={4}>            
+                    <Grid item sm={12} md={4}>            
                         <List>                            
                             <ListItem>
                                 <ListItemAvatar>
