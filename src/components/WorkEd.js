@@ -22,6 +22,9 @@ import {
 } from '@material-ui/lab'
 
 const useStyles = makeStyles((theme) => ({
+  card: {
+    textAlign: 'justify'
+  },
   paper: {
     padding: "6px 16px"
   }
@@ -31,9 +34,9 @@ export default function WorkEd() {
   const classes = useStyles();
 
   return (
-    <Card>
-      <CardContent>
-        <HeaderBar icon={<History />} title="Timeline" />
+    <Card className={classes.card}>
+      <HeaderBar icon={<History />} title="Timeline" />
+      <CardContent>        
         <School color="primary" fontSize="large" /> Education
         <WorkOutline color="primary" fontSize="large" /> Work
         <Timeline align="alternate">
