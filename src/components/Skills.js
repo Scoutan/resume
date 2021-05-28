@@ -1,8 +1,9 @@
 import React from 'react'
+import HeaderBar from '../components/HeaderBar'
 import {
     makeStyles,
     Grid,
-    Card, CardHeader, CardContent,
+    Card, CardContent,
     List, ListItem, ListItemAvatar, ListItemText,
     Avatar,
     Divider
@@ -14,9 +15,6 @@ import {
 const useStyles = makeStyles((theme) => ({
     card: {
         textAlign: 'justify'
-    },
-    transparentBG: {
-        backgroundColor: 'inherit'
     }
 }));
 
@@ -25,14 +23,7 @@ export default function Skills() {
 
     return (
         <Card className={classes.card}>
-            <CardHeader
-                avatar={
-                    <Avatar className={classes.transparentBG}>
-                        <DeveloperMode color="primary" fontSize="large" />
-                    </Avatar>   
-                }
-                title="Technical Skills"                
-            />
+            <HeaderBar icon={<DeveloperMode />} title="Technical Skills" />      
             <CardContent>
                 <Grid
                 container

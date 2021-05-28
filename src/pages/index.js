@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import Image from 'next/image'
+import Summary from '../components/Summary'
 import WorkEd from '../components/WorkEd'
 import ContactForm from '../components/ContactForm'
 import Skills from '../components/Skills'
@@ -12,7 +12,7 @@ import {
   Container,
   Grid,
   Paper,
-  Card, CardContent
+  Typography
 } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
@@ -41,6 +41,13 @@ export default function Home() {
 
         <main>
           <Paper className={classes.paper} elevation={1}>
+            <Typography 
+              gutterBottom 
+              variant="h3" 
+              align="center"
+            >
+              Resume
+            </Typography>
             <Grid
               container
               spacing={3}
@@ -48,14 +55,7 @@ export default function Home() {
               alignItems="flex-start"
             >
               <Grid item xs={12}>
-                <Card className={classes.card}>
-                  <CardContent>
-                    <h1>Summary</h1>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet pretium augue, elementum aliquet leo. Integer lacinia metus metus, eu fermentum mi lobortis quis. Cras gravida eleifend libero quis pulvinar. Donec pharetra cursus velit semper aliquam. Ut elementum in libero lacinia suscipit. Cras at tellus sit amet mauris fringilla convallis et placerat velit. Vivamus ac dui et neque iaculis vehicula vitae vitae massa. Ut facilisis lacus sapien, nec rhoncus dolor bibendum a. Suspendisse rhoncus metus in velit mattis, at faucibus magna mollis. In nibh purus, sollicitudin nec nisi laoreet, lobortis sagittis ipsum. Donec est nisl, iaculis sed malesuada nec, dictum ut orci. Mauris ullamcorper, erat a dapibus sodales, ipsum sem facilisis arcu, vitae consequat orci quam et tellus.
-                    </p>
-                  </CardContent>
-                </Card>
+                <Summary />
               </Grid>
               <Grid item xs={12}>
                 <Projects /> 
@@ -63,35 +63,18 @@ export default function Home() {
               <Grid item xs={12}>                
                 <Skills />              
               </Grid>
-              <Grid item xs={12}>
-                <Card className={classes.card}>
-                  <CardContent>
-                    <WorkEd />
-                  </CardContent>
-                </Card>
+              <Grid item xs={12}>                
+                <WorkEd />
               </Grid>
               <Grid item xs={12}>
-                <Card className={classes.card}>
-                  <CardContent>
-                    <ContactForm />
-                  </CardContent>
-                </Card>
+                <ContactForm />             
               </Grid>
             </Grid>
           </Paper>
         </main>
 
         <footer>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Powered by{' '}
-            <span>
-              <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-            </span>
-          </a>
+          
         </footer>
       </Container>
     </React.Fragment>

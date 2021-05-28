@@ -1,22 +1,24 @@
 import React from 'react'
-import Image from 'next/image'
+import HeaderBar from '../components/HeaderBar'
 import {
     makeStyles,
-    Card, CardHeader, CardContent,
-    List, ListItem, ListItemAvatar, ListItemText,
-    Avatar,
-    Divider
-  } from '@material-ui/core'
-  import {
+    Card, CardContent, CardActionArea, CardMedia,
+    Grid,
+    Typography
+} from '@material-ui/core'
+import {
     Apps
-  } from '@material-ui/icons'
+} from '@material-ui/icons'
 
 const useStyles = makeStyles((theme) => ({
     card: {
         textAlign: 'justify'
     },
-    transparentBG: {
-        backgroundColor: 'inherit'
+    item: {
+        maxWidth: 350
+    },
+    media: {
+        height: 140
     }
 }));
 
@@ -24,60 +26,66 @@ export default function Projects() {
     const classes = useStyles();
 
     return (
-        <Card className={classes.card}>        
-            <CardHeader
-                avatar={
-                    <Avatar className={classes.transparentBG}>
-                        <Apps color="primary" fontSize="large" />
-                    </Avatar>   
-                }
-                title="Projects"                
-            />
-            <CardContent>             
-                <List>                    
-                    <ListItem>
-                        <a
-                            href="https://chuko-cra.vercel.app/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <ListItemAvatar>
-                            <Image 
-                                alt="Chuko" 
-                                src="/screenshot-chuko.jpg" 
-                                width={206}
-                                height={116}
-                            />
-                            </ListItemAvatar>
-                        </a>
-                        <a
-                            href="https://chuko-cra.vercel.app/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <ListItemText primary="Chuko" secondary="My personal React project!" />
-                        </a>
-                    </ListItem>                    
-                    <Divider component="li" />
-                    <a
-                        href="https://stephen-grider.vercel.app/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                    <ListItem>
-                        <ListItemAvatar>
-                        <Image 
-                            alt="Chuko" 
-                            src="/screenshot-SG.jpg" 
-                            width={206}
-                            height={116}
-                        />
-                        </ListItemAvatar>
-                        <ListItemText primary="Compilation of apps" secondary="From Stephen Grider's React/Redux course" />
-                    </ListItem>
-                    </a>
-                    <Divider component="li" />
-                </List>
+        <Card className={classes.card}>
+            <HeaderBar icon={<Apps />} title="Projects" />
+            <CardContent>
+                <Grid 
+                    container
+                    spacing={2}
+                    justify="space-evenly"
+                    alignItems="center"
+                >
+                    <Grid item xs={12} sm={5}>
+                        <Card className={classes.item} variant="outlined">                    
+                            <CardActionArea>                        
+                                <a
+                                    href="https://chuko-cra.vercel.app/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <CardMedia
+                                        className={classes.media}
+                                        image="/screenshot-chuko.jpg"
+                                        title="Chuko"
+                                    />
+                                </a>
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5" component="h2">
+                                        Chuko
+                                    </Typography>
+                                    <Typography variant="body2" color="textSecondary" component="p">
+                                        My personal React project!
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea>                   
+                        </Card>
+                    </Grid>
+                    <Grid item xs={12} sm={5}>
+                        <Card className={classes.item} variant="outlined">                    
+                            <CardActionArea>                        
+                                <a
+                                    href="https://stephen-grider.vercel.app/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <CardMedia
+                                        className={classes.media}
+                                        image="/screenshot-SG.jpg"
+                                        title="Compilation of apps"
+                                    />
+                                </a>
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5" component="h2">
+                                        Compilation of apps
+                                    </Typography>
+                                    <Typography variant="body2" color="textSecondary" component="p">
+                                        From Stephen Grider's React/Redux course
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea>                   
+                        </Card>
+                    </Grid>
+                </Grid>
             </CardContent>
         </Card>
     )
