@@ -30,12 +30,12 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function WorkEd() {
+export default function WorkEd(props) {
   const classes = useStyles();
 
   return (
-    <Card className={classes.card}>
-      <HeaderBar icon={<History />} title="Timeline" />
+    <Card className={classes.card} id={props.title}>
+      <HeaderBar icon={<History />} title={props.title} />
       <CardContent>        
         <School color="primary" fontSize="large" /> Education
         <WorkOutline color="primary" fontSize="large" /> Work

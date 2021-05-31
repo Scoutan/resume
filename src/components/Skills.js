@@ -18,12 +18,12 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function Skills() {
+export default function Skills(props) {
     const classes = useStyles();
 
     return (
-        <Card className={classes.card}>
-            <HeaderBar icon={<DeveloperMode />} title="Technical Skills" />      
+        <Card className={classes.card} id={props.title}>
+            <HeaderBar icon={<DeveloperMode />} title={props.title} />      
             <CardContent>
                 <Grid
                 container

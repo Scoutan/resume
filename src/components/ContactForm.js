@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function ContactForm() {
+export default function ContactForm(props) {
     const classes = useStyles();
 
     const MyTextInput = ({ label, ...props }) => {
@@ -62,8 +62,8 @@ export default function ContactForm() {
     };
 
     return (
-        <Card className={classes.card}>
-            <HeaderBar icon={<Email />} title="Contact me" />      
+        <Card className={classes.card} id={props.title}>
+            <HeaderBar icon={<Email />} title={props.title} />      
             <CardContent>            
                 <Formik
                     initialValues={{

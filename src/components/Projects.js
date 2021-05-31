@@ -22,12 +22,12 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function Projects() {
+export default function Projects(props) {
     const classes = useStyles();
 
     return (
-        <Card className={classes.card}>
-            <HeaderBar icon={<Apps />} title="Projects" />
+        <Card className={classes.card} id={props.title}>
+            <HeaderBar icon={<Apps />} title={props.title} />
             <CardContent>
                 <Grid 
                     container
