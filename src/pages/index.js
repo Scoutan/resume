@@ -1,5 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
+import NavBar from '../components/NavBar'
+import BackToTop from '../components/BackToTop'
 import Summary from '../components/Summary'
 import WorkEd from '../components/WorkEd'
 import ContactForm from '../components/ContactForm'
@@ -12,6 +14,7 @@ import {
   Container,
   Grid,
   Paper,
+  Box,
   Typography
 } from '@material-ui/core'
 
@@ -21,11 +24,23 @@ const useStyles = makeStyles((theme) => ({
   },
   card: {
     textAlign: 'justify'
+  },
+  box: {
+    margin: '0 auto',
+    width: '55%'
   }
 }));
 
 export default function Home() {
   const classes = useStyles();
+
+  const headers = {
+    summary: 'Summary',
+    projects: 'Projects',
+    skills: 'Technical Skills',
+    timeline: 'Timeline',
+    contact: 'Contact Me'
+  }
 
   return (
     <React.Fragment>
@@ -39,13 +54,19 @@ export default function Home() {
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
         </Head>
 
-        <main>
+        <main>          
           <Paper className={classes.paper} elevation={1}>
-            <Typography 
-              gutterBottom 
-              variant="h3" 
-              align="center"
+            <NavBar headers={headers} />
+            <Box
+              className={classes.box}
+              bgcolor="text.primary" 
+              color="background.paper"
             >
+              <Typography variant="h3" align="center">
+                JOHNSON CHUNG
+              </Typography>
+            </Box>
+            <Typography variant="h4" align="center" gutterBottom>
               Resume
             </Typography>
             <Grid
@@ -55,28 +76,28 @@ export default function Home() {
               alignItems="flex-start"
             >
               <Grid item xs={12}>
-                <Summary />
+                <Summary title={headers.summary} />
               </Grid>
               <Grid item xs={12}>
-                <Projects /> 
+                <Projects title={headers.projects} /> 
               </Grid>
               <Grid item xs={12}>                
-                <Skills />              
+                <Skills title={headers.skills} />              
               </Grid>
               <Grid item xs={12}>                
-                <WorkEd />
+                <WorkEd title={headers.timeline} />
               </Grid>
               <Grid item xs={12}>
-                <ContactForm />             
+                <ContactForm title={headers.contact} />             
               </Grid>
             </Grid>
           </Paper>
         </main>
 
         <footer>
-          
+          <BackToTop />
         </footer>
-      </Container>
+      </Container>      
     </React.Fragment>
   )
 }
