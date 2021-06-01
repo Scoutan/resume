@@ -2,13 +2,19 @@ import React from 'react'
 import {
     makeStyles,
     Typography,
-    Toolbar, IconButton
+    Toolbar, IconButton,
+    Box
 } from '@material-ui/core'
 
 const useStyles = makeStyles(() => ({
-    toolBar: {
-        backgroundColor: '#3f51b5',
-        color: '#fff'
+    sectionHeader: {
+        backgroundColor: '#1F2833',
+        color: '#66FCF1',
+        textAlign: 'center',
+        border: '2px solid #45A29E',
+        borderRadius: '5px',
+        display: 'inline-block',
+        padding: '5px 15px',
     }
 }));
 
@@ -16,13 +22,10 @@ export default function HeaderBar(props) {
     const classes = useStyles();
 
     return (
-        <Toolbar className={classes.toolBar}>
-            <IconButton edge="start" color="inherit" aria-label="menu">
-                {props.icon}
-            </IconButton>
+        <Box className={classes.sectionHeader}>
             <Typography variant="h5">
-                {props.title}
+                {props.icon} {props.title}
             </Typography>
-        </Toolbar>            
+        </Box>            
     )
 }
