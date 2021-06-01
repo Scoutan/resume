@@ -13,7 +13,9 @@ import * as Yup from 'yup'
 
 const useStyles = makeStyles((theme) => ({
     card: {
-        textAlign: 'justify'
+        backgroundColor: 'inherit',
+        color: '#C5C6C7',
+        textAlign: 'center'
     }
 }));
 
@@ -62,7 +64,7 @@ export default function ContactForm(props) {
     };
 
     return (
-        <Card className={classes.card} id={props.title}>
+        <Card className={classes.card} id={props.title} elevation={0}>
             <HeaderBar icon={<Email />} title={props.title} />      
             <CardContent>            
                 <Formik
