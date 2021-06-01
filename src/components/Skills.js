@@ -4,6 +4,7 @@ import {
     makeStyles,
     Grid,
     Card, CardContent,
+    Typography,
     List, ListItem, ListItemAvatar, ListItemText,
     Avatar,
     Divider
@@ -14,7 +15,9 @@ import {
 
 const useStyles = makeStyles((theme) => ({
     card: {
-        textAlign: 'justify'
+        backgroundColor: 'inherit',
+        color: '#C5C6C7',
+        textAlign: 'center'
     }
 }));
 
@@ -22,7 +25,7 @@ export default function Skills(props) {
     const classes = useStyles();
 
     return (
-        <Card className={classes.card} id={props.title}>
+        <Card className={classes.card} id={props.title} elevation={0}>
             <HeaderBar icon={<DeveloperMode />} title={props.title} />      
             <CardContent>
                 <Grid
@@ -37,21 +40,28 @@ export default function Skills(props) {
                                 <ListItemAvatar>
                                     <Avatar alt="React logo" src="/React-icon.svg" />
                                 </ListItemAvatar>
-                                <ListItemText primary="React JS" secondary="Create React App / Next.js" />
+                                <ListItemText>
+                                    <Typography>React JS</Typography>
+                                    <Typography>Create React App / Next.js</Typography>
+                                </ListItemText>
                             </ListItem>
                             <Divider variant="inset" component="li" />
                             <ListItem>
                                 <ListItemAvatar>
                                     <Avatar>R</Avatar>
                                 </ListItemAvatar>
-                                <ListItemText primary="Redux" />
+                                <ListItemText>
+                                    <Typography>Redux</Typography>
+                                </ListItemText>
                             </ListItem>
                             <Divider variant="inset" component="li" />
                             <ListItem>
                                 <ListItemAvatar>
                                     <Avatar alt="CSS3 logo" src="/CSS3-icon.svg" />
                                 </ListItemAvatar>
-                                <ListItemText primary="CSS" secondary="Refreshed since March 2021" />
+                                <ListItemText>
+                                    <Typography>CSS</Typography>
+                                </ListItemText>
                             </ListItem>
                             <Divider variant="inset" component="li" />
                             <ListItem>
