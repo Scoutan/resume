@@ -12,21 +12,25 @@ import {
 
 const useStyles = makeStyles((theme) => ({
     card: {
-        textAlign: 'justify'
+        backgroundColor: 'inherit',
+        color: '#C5C6C7',
+        textAlign: 'center'
     },
     item: {
-        maxWidth: 350
+        maxWidth: 350,
+        margin: '0 auto',
+        boxShadow: '2px 3px 1px #999999'
     },
     media: {
         height: 140
-    }
+    },
 }));
 
 export default function Projects(props) {
     const classes = useStyles();
 
     return (
-        <Card className={classes.card} id={props.title}>
+        <Card className={classes.card} id={props.title} elevation={0}>
             <HeaderBar icon={<Apps />} title={props.title} />
             <CardContent>
                 <Grid 
@@ -49,11 +53,11 @@ export default function Projects(props) {
                                         title="Chuko"
                                     />
                                 </a>
-                                <CardContent>
+                                <CardContent className={classes.cardContent}>
                                     <Typography gutterBottom variant="h5" component="h2">
                                         Chuko
                                     </Typography>
-                                    <Typography variant="body2" color="textSecondary" component="p">
+                                    <Typography variant="body2" component="p">
                                         My personal React project!
                                     </Typography>
                                 </CardContent>
