@@ -23,7 +23,9 @@ import {
 
 const useStyles = makeStyles((theme) => ({
   card: {
-    textAlign: 'justify'
+    backgroundColor: 'inherit',
+        color: '#C5C6C7',
+        textAlign: 'center'
   },
   paper: {
     padding: "6px 16px"
@@ -34,7 +36,7 @@ export default function WorkEd(props) {
   const classes = useStyles();
 
   return (
-    <Card className={classes.card} id={props.title}>
+    <Card className={classes.card} id={props.title} elevation={0}>
       <HeaderBar icon={<History />} title={props.title} />
       <CardContent>        
         <School color="primary" fontSize="large" /> Education
