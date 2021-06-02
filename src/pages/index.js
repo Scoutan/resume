@@ -1,20 +1,19 @@
 import React from 'react'
 import Head from 'next/head'
 import NavBar from '../components/NavBar'
+import SideMenu from '../components/SideMenu'
 import BackToTop from '../components/BackToTop'
 import Summary from '../components/Summary'
 import WorkEd from '../components/WorkEd'
 import ContactForm from '../components/ContactForm'
 import Skills from '../components/Skills'
 import Projects from '../components/Projects'
-//import styles from '../../styles/Home.module.css'
+// import styles from '../../styles/Home.module.css'
 import {
   makeStyles,
   CssBaseline,
   Container,
   Grid,
-  Paper,
-  Box,
   Typography
 } from '@material-ui/core'
 
@@ -62,13 +61,15 @@ export default function Home() {
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
           </Head>
 
-          <main>     
+          <main>    
+            <SideMenu />
               <Container>
                 <Typography variant="h3" className={classes.header}>
                   JOHNSON CHUNG
                 </Typography>
                 <Typography variant="h1" className={classes.hello}>
                   HELLO
+                  {/* <span className={styles.blinkingCursor}>|</span> */}
                 </Typography>                                
               <Grid
                 container
