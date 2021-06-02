@@ -12,6 +12,10 @@ const useStyles = makeStyles((theme) => ({
       bottom: theme.spacing(5),
       right: theme.spacing(3),
     },
+    arrow: {
+        backgroundColor: '#66FCF1',
+        color: '#0B0C10'
+    }
   }));
 
 function ScrollTop(props) {
@@ -45,9 +49,11 @@ ScrollTop.propTypes = {
 };
 
 export default function BackToTop(props) {
+    const classes = useStyles();
+
     return (
         <ScrollTop {...props}>
-            <Fab color="secondary" size="small" aria-label="scroll back to top">
+            <Fab size="small" aria-label="scroll back to top" className={classes.arrow}>
                 <KeyboardArrowUpIcon />
             </Fab>
         </ScrollTop> 
