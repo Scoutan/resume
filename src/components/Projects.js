@@ -1,10 +1,12 @@
 import React from 'react'
+import Image from 'next/image'
 import HeaderBar from '../components/HeaderBar'
 import {
     makeStyles,
     Card, CardContent, CardActionArea, CardMedia,
     Grid,
-    Typography
+    Typography,
+    Divider
 } from '@material-ui/core'
 import {
     Apps
@@ -16,14 +18,15 @@ const useStyles = makeStyles((theme) => ({
         color: '#C5C6C7',
         textAlign: 'center'
     },
-    item: {
-        maxWidth: 350,
-        margin: '0 auto',
-        boxShadow: '2px 3px 1px #999999'
+    imageWrapper: {
+        position: 'relative',
+        height: '300px'
     },
-    media: {
-        height: 140
-    },
+    descriptionWrapper: {
+        '& > h3': {
+            color: '#66FCF1'
+        }
+    }
 }));
 
 export default function Projects(props) {
@@ -39,55 +42,50 @@ export default function Projects(props) {
                     justify="space-evenly"
                     alignItems="center"
                 >
-                    <Grid item xs={12} sm={5}>
-                        <Card className={classes.item} variant="outlined">                    
-                            <CardActionArea>                        
-                                <a
-                                    href="https://chuko-cra.vercel.app/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <CardMedia
-                                        className={classes.media}
-                                        image="/screenshot-chuko.jpg"
-                                        title="Chuko"
-                                    />
-                                </a>
-                                <CardContent className={classes.cardContent}>
-                                    <Typography gutterBottom variant="h5" component="h2">
-                                        Chuko
-                                    </Typography>
-                                    <Typography variant="body2" component="p">
-                                        My personal React project!
-                                    </Typography>
-                                </CardContent>
-                            </CardActionArea>                   
-                        </Card>
+                    <Grid item xs={5} sm={5} className={classes.imageWrapper}>                     
+                        <a
+                            href="https://chuko-cra.vercel.app/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <Image 
+                                src="/screenshot-chuko.jpg"
+                                alt="Chuko"
+                                layout='fill'
+                                objectFit='contain'                                
+                            />
+                        </a>                        
                     </Grid>
-                    <Grid item xs={12} sm={5}>
-                        <Card className={classes.item} variant="outlined">                    
-                            <CardActionArea>                        
-                                <a
-                                    href="https://stephen-grider.vercel.app/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <CardMedia
-                                        className={classes.media}
-                                        image="/screenshot-SG.jpg"
-                                        title="Compilation of apps"
-                                    />
-                                </a>
-                                <CardContent>
-                                    <Typography gutterBottom variant="h5" component="h2">
-                                        Compilation of apps
-                                    </Typography>
-                                    <Typography variant="body2" color="textSecondary" component="p">
-                                        From Stephen Grider's React/Redux course
-                                    </Typography>
-                                </CardContent>
-                            </CardActionArea>                   
-                        </Card>
+                    <Grid item xs={5} sm={5} className={classes.descriptionWrapper}>
+                        <Typography gutterBottom variant="h3">
+                            Chuko
+                        </Typography>
+                        <Typography variant="body1">
+                            My personal React project!
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={12} />     
+                    <Grid item xs={12} sm={5} className={classes.descriptionWrapper}>
+                        <Typography gutterBottom variant="h3" >
+                            Compilation of apps
+                        </Typography>
+                        <Typography variant="body1">
+                            From Stephen Grider's React/Redux course
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={12} sm={5} className={classes.imageWrapper}>                        
+                        <a
+                            href="https://stephen-grider.vercel.app/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <Image 
+                                src="/screenshot-SG.jpg"
+                                alt="Compilation of apps"
+                                layout='fill'
+                                objectFit='contain'
+                            />
+                        </a>
                     </Grid>
                 </Grid>
             </CardContent>
