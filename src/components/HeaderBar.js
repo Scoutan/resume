@@ -2,7 +2,6 @@ import React from 'react'
 import {
     makeStyles,
     Typography,
-    Toolbar, IconButton,
     Box
 } from '@material-ui/core'
 
