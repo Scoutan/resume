@@ -14,8 +14,24 @@ import {
   CssBaseline,
   Container,
   Grid,
-  Typography
+  Typography,
+  createMuiTheme, ThemeProvider
 } from '@material-ui/core'
+
+const theme = createMuiTheme();
+
+theme.typography.h1 = {
+  fontSize: '18rem',
+  '@media (max-width:1015px)': {
+    fontSize: '14rem'
+  },
+  '@media (max-width:815px)': {
+    fontSize: '12rem'
+  },
+  '@media (max-width:700px)': {
+    fontSize: '10rem'
+  }
+}
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -31,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
   hello: {
     fontFamily: 'Helvetica',
     fontWeight: '700',
-    fontSize: '20rem',
+    // fontSize: '18rem',
     lineHeight: '1.3',
     color: '#66FCF1',
     textAlign: 'center'
@@ -62,15 +78,16 @@ export default function Home() {
           </Head>
 
           <main>    
-            <SideMenu />
+            <SideMenu headers={headers} />
               <Container>
                 <Typography variant="h3" className={classes.header}>
                   JOHNSON CHUNG
                 </Typography>
-                <Typography variant="h1" className={classes.hello}>
-                  HELLO
-                  {/* <span className={styles.blinkingCursor}>|</span> */}
-                </Typography>                                
+                <ThemeProvider theme={theme}>
+                  <Typography variant="h1" className={classes.hello}>
+                    HELLO                  
+                  </Typography>                                
+                </ThemeProvider>
               <Grid
                 container
                 spacing={3}
