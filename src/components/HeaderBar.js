@@ -14,7 +14,7 @@ const useStyles = makeStyles(() => ({
         borderRadius: '5px',
         display: 'inline-block',
         padding: '5px 15px',
-        margin: '30px 0 50px 0'
+        margin: '70px 0 50px 0'
     }
 }));
 
