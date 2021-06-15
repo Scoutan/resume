@@ -5,7 +5,7 @@ import SideMenu from '../components/SideMenu'
 import BackToTop from '../components/BackToTop'
 import Summary from '../components/Summary'
 import WorkEd from '../components/WorkEd'
-import ContactForm from '../components/ContactForm'
+import ContactInfo from '../components/ContactInfo'
 import Skills from '../components/Skills'
 import Projects from '../components/Projects'
 // import styles from '../../styles/Home.module.css'
@@ -61,8 +61,8 @@ export default function Home() {
     summary: 'Summary',
     projects: 'Projects',
     skills: 'Technical Skills',
-    timeline: 'Timeline',
-    contact: 'Contact Me'
+    timeline: 'Education & Work',
+    contact: 'Contact Info'
   }
 
   return (
@@ -80,7 +80,7 @@ export default function Home() {
           <main>    
             <SideMenu headers={headers} />
               <Container>
-                <Typography variant="h3" className={classes.header}>
+                <Typography variant="h3" className={classes.header} id="back-to-top-anchor">
                   JOHNSON CHUNG
                 </Typography>
                 <ThemeProvider theme={theme}>
@@ -107,7 +107,7 @@ export default function Home() {
                   <WorkEd title={headers.timeline} />
                 </Grid>
                 <Grid item xs={12}>
-                  <ContactForm title={headers.contact} />             
+                  <ContactInfo title={headers.contact} />             
                 </Grid>
               </Grid>
               </Container> 
