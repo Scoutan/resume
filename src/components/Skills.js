@@ -80,7 +80,7 @@ export default function Skills(props) {
 
     return (
         <Card className={classes.card} id={props.title} elevation={0}>
-            <HeaderBar icon={<DeveloperMode />} title={props.title} />      
+            <HeaderBar icon={<DeveloperMode fontSize="large" />} title={props.title} />      
             <CardContent>
                 <Grid container spacing={3} alignItems="flex-start">
                     <Grid item xs={6} sm={6} md={6}>            
