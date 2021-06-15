@@ -14,7 +14,8 @@ const useStyles = makeStyles(() => ({
         borderRadius: '5px',
         display: 'inline-block',
         padding: '5px 15px',
-        margin: '70px 0 50px 0'
+        margin: '70px 0 50px 0',
+        textTransform: 'uppercase',
     }
 }));
 
@@ -23,7 +24,7 @@ export default function HeaderBar(props) {
 
     return (
         <Box className={classes.sectionHeader}>
-            <Typography variant="h4">
+            <Typography variant="h3">
                 {props.icon} {props.title}
             </Typography>
         </Box>            
