@@ -6,6 +6,7 @@ import {
     Menu, MenuItem,
     AppBar, Toolbar,
     useScrollTrigger,
+    Typography,
 } from '@material-ui/core';
 import { 
     Bookmarks,
@@ -23,7 +24,7 @@ function ContrastOnScroll(props) {
     const classes = useStyles();
 
     return React.cloneElement(children, {
-        className: trigger ? classes.test : null
+        className: trigger ? classes.appBar : null
     })
 }
 
@@ -39,17 +40,24 @@ const scrollToSection = (props) => {
 }
 
 const useStyles = makeStyles(() => ({
-    bookmarks: {
+    appBar: {
+        background: 'rgb(31, 40, 51, 0.75)'
+    },
+    toolbar: {
+        minHeight: '50px'
+    },
+    menuButton: {
         position: 'fixed',
         color: '#66FCF1',
         top: '10px',
         left: '30px',
+        fontWeight: '700'
     },
     expand: {
         position: 'fixed',
         color: '#66FCF1',
-        top: '30px',
-        left: '90px',        
+        top: '28px',
+        left: '50px',        
     },
     git: {
         position: 'fixed',
@@ -73,14 +81,12 @@ const useStyles = makeStyles(() => ({
         opacity: '0.9',
     },
     menuItem: {
-        color: '#FFF',
-        fontSize: '1.2rem',
-        lineHeight: '1.8',
-        letterSpacing: '0.3em',
+        color: '#66FCF1',
+        fontSize: '1.1rem',
+        lineHeight: '2.5',
+        letterSpacing: '0.1em',
+        textTransform: 'uppercase',
     },
-    test: {
-        background: 'rgb(31, 40, 51, 0.75)'
-    }
 }));
 
 export default function SideMenu(props) {
@@ -97,76 +103,69 @@ export default function SideMenu(props) {
     const classes = useStyles();
 
     return (
-        <div>
-            <ContrastOnScroll {...props}>
-                <AppBar className={classes.appBar} color='transparent' elevation={0}>
-                    <Toolbar id="back-to-top-anchor">
-                        <Button 
-                            className={classes.bookmarks} 
-                            onClick={handleClick}
-                            startIcon={<Bookmarks />}
-                        >
-                            Bookmarks                            
-                        </Button>
-                        <ExpandMore className={classes.expand} />
-                        <a href='https://github.com/Scoutan' target="_blank" rel="noopener noreferrer">
-                            <IconButton className={classes.git}>
-                            <Tooltip title="github.com/Scoutan" arrow>
-                                <GitHub fontSize="small" />
-                                </Tooltip>
-                            </IconButton>
-                        </a>                        
-                        <Button 
-                            className={classes.email}
-                            startIcon={<MailOutline />}
-                            href='mailto:johnson.chungck@gmail.com'
-                        >
-                                johnson.chungck@gmail.com
-                        </Button>
-                        <Menu
-                            id="simple-menu"
-                            anchorEl={anchorEl}
-                            keepMounted
-                            open={Boolean(anchorEl)}
-                            onClose={handleClose}
-                            classes={{paper: classes.menu}}
-                            className={classes.menuOpacity}
-                            elevation={0}
-                            anchorOrigin={{
-                                vertical: 'top',
-                                horizontal: 'center'
-                            }}
-                            transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'center'
-                            }}
-                            disableScrollLock={true}
-                        >
-                            <MenuItem 
-                                className={classes.menuItem} 
-                                onClick={() => scrollToSection(props.headers.projects)}>
-                                    Projects
-                            </MenuItem>
-                            <MenuItem 
-                                className={classes.menuItem} 
-                                onClick={() => scrollToSection(props.headers.skills)}>
-                                    Technical Skills
-                            </MenuItem>
-                            <MenuItem 
-                                className={classes.menuItem} 
-                                onClick={() => scrollToSection(props.headers.timeline)}>
-                                    History
-                            </MenuItem>
-                            <MenuItem 
-                                className={classes.menuItem} 
-                                onClick={() => scrollToSection(props.headers.contact)}>
-                                    Contact Form
-                            </MenuItem>
-                        </Menu>
-                    </Toolbar>
-                </AppBar>        
-            </ContrastOnScroll>
-            <Toolbar id="back-to-top-anchor" />
-        </div>
+        <ContrastOnScroll {...props}>
+            <AppBar color='transparent' elevation={0}>
+                <Toolbar className={classes.toolbar}>
+                    <Button className={classes.menuButton} onClick={handleClick}>
+                        Menu
+                        <ExpandMore className={classes.expand} />                       
+                    </Button>
+                    <a href='https://github.com/Scoutan' target="_blank" rel="noopener noreferrer">
+                        <IconButton className={classes.git}>
+                        <Tooltip title="github.com/Scoutan" arrow>
+                            <GitHub fontSize="small" />
+                            </Tooltip>
+                        </IconButton>
+                    </a>                        
+                    <Button 
+                        className={classes.email}
+                        startIcon={<MailOutline />}
+                        href='mailto:johnson.chungck@gmail.com'
+                    >
+                            johnson.chungck@gmail.com
+                    </Button>
+                    <Menu
+                        id="simple-menu"
+                        anchorEl={anchorEl}
+                        keepMounted
+                        open={Boolean(anchorEl)}
+                        onClose={handleClose}
+                        classes={{paper: classes.menu}}
+                        className={classes.menuOpacity}
+                        elevation={0}
+                        anchorOrigin={{
+                            vertical: 'top',
+                            horizontal: 'center'
+                        }}
+                        transformOrigin={{
+                            vertical: 'top',
+                            horizontal: 'center'
+                        }}
+                        disableScrollLock={true}
+                    >
+                        <MenuItem 
+                            className={classes.menuItem} 
+                            onClick={() => scrollToSection(props.headers.projects)}>
+                                {props.headers.projects}
+                        </MenuItem>
+                        <MenuItem 
+                            className={classes.menuItem} 
+                            onClick={() => scrollToSection(props.headers.skills)}>
+                                {props.headers.skills}
+                        </MenuItem>
+                        <MenuItem 
+                            className={classes.menuItem} 
+                            onClick={() => scrollToSection(props.headers.timeline)}>
+                                {props.headers.timeline}
+                        </MenuItem>
+                        <MenuItem 
+                            className={classes.menuItem} 
+                            onClick={() => scrollToSection(props.headers.contact)}>
+                                {props.headers.contact}
+                        </MenuItem>
+                    </Menu>
+                </Toolbar>
+            </AppBar>        
+        </ContrastOnScroll>
     );
 }
