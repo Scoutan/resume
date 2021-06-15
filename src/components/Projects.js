@@ -34,7 +34,7 @@ export default function Projects(props) {
 
     return (
         <Card className={classes.card} id={props.title} elevation={0}>
-            <HeaderBar icon={<Apps />} title={props.title} />
+            <HeaderBar icon={<Apps fontSize="large" />} title={props.title} />
             <CardContent>
                 <Grid 
                     container
