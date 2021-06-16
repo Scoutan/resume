@@ -145,6 +145,11 @@ export default function SideMenu(props) {
                     >
                         <MenuItem 
                             className={classes.menuItem} 
+                            onClick={() => scrollToSection(props.headers.intro)}>
+                                {props.headers.intro}
+                        </MenuItem>
+                        <MenuItem 
+                            className={classes.menuItem} 
                             onClick={() => scrollToSection(props.headers.projects)}>
                                 {props.headers.projects}
                         </MenuItem>
