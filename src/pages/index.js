@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
     color: '#FFF',
     letterSpacing: '0.3em',
     textAlign: 'center',
-    padding: '50px 0 0 0'
+    padding: '100px 0 0 0'
   },
   hello: {
     fontFamily: 'Helvetica',
@@ -58,7 +58,7 @@ export default function Home() {
   const classes = useStyles();
 
   const headers = {
-    summary: 'Summary',
+    intro: 'Introduction',
     projects: 'Projects',
     skills: 'Technical Skills',
     timeline: 'Education & Work',
@@ -79,7 +79,7 @@ export default function Home() {
 
           <main>    
             <SideMenu headers={headers} />
-              <Container>
+              <Container id={headers.intro}>
                 <Typography variant="h3" className={classes.header} id="back-to-top-anchor">
                   JOHNSON CHUNG
                 </Typography>
@@ -95,7 +95,7 @@ export default function Home() {
                 alignItems="flex-start"
               >
                 <Grid item xs={12}>
-                  <Summary title={headers.summary} />
+                  <Summary headers={headers} />
                 </Grid>
                 <Grid item xs={12}>
                   <Projects title={headers.projects} /> 
