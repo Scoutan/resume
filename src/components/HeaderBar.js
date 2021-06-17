@@ -16,6 +16,17 @@ const useStyles = makeStyles(() => ({
         padding: '5px 15px',
         margin: '70px 0 50px 0',
         textTransform: 'uppercase',
+        '& > h3': {
+            '@media (max-width:450px)': {
+                fontSize: '1.8rem',
+            },
+            '& > svg': {
+                fontSize: '2.2rem',
+                '@media (max-width:450px)': {
+                    fontSize: '1.3rem'  
+                },
+            },
+        }
     }
 }));
 
