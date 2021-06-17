@@ -26,7 +26,7 @@ export default function ContactInfo(props) {
 
     return (
         <Card className={classes.card} id={props.title} elevation={0}>
-            <HeaderBar icon={<Email fontSize="large" />} title={props.title} />      
+            <HeaderBar icon={<Email />} title={props.title} />      
             <CardContent>
                 <Typography variant="h5" gutterBottom>The best way to reach me is by email!</Typography>
                 <a href='mailto:johnson.chungck@gmail.com' className={classes.email}>
