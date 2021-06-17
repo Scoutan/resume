@@ -64,7 +64,7 @@ export default function Home() {
     intro: 'Introduction',
     projects: 'Projects',
     skills: 'Technical Skills',
-    timeline: 'Education & Work',
+    timeline: 'Education | Experience',
     contact: 'Contact Info'
   }
 
