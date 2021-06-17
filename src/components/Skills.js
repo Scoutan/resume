@@ -5,8 +5,7 @@ import {
     Grid,
     Card, CardContent,
     Typography,
-    List, ListSubheader, ListItem, ListItemAvatar, ListItemText, 
-    Avatar,
+    List, ListItem, ListItemAvatar, ListItemText, Avatar,
     Divider
   } from '@material-ui/core'
   import {
