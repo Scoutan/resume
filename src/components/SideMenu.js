@@ -1,15 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import {
     makeStyles,
     Button, IconButton, Tooltip,
     Menu, MenuItem,
-    AppBar, Toolbar,
-    useScrollTrigger,
+    AppBar, Toolbar, useScrollTrigger,
     Typography,
 } from '@material-ui/core';
-import { 
-    Bookmarks,
+import {
     MailOutline,
     GitHub,
     ExpandMore
