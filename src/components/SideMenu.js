@@ -64,13 +64,20 @@ const useStyles = makeStyles(() => ({
         color: '#66FCF1',
         top: '18px',
         right: '300px',
-        padding: '0'
+        padding: '0',
+        '@media (max-width:400px)': {
+            top: '16px',
+            right: '230px',
+        }
     },
     email: {
         position: 'fixed',
         color: '#66FCF1',
         top: '10px',
         right: '10px',
+        '@media (max-width:400px)': {
+            fontSize: '0.7em'
+        }
     },
     menu: {
         backgroundColor: '#1F2833',                

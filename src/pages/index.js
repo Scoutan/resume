@@ -30,6 +30,9 @@ theme.typography.h1 = {
   },
   '@media (max-width:700px)': {
     fontSize: '10rem'
+  },
+  '@media (max-width:450px)': {
+    fontSize: '7em'
   }
 }
 

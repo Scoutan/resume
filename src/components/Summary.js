@@ -23,6 +23,9 @@ const useStyles = makeStyles((theme) => ({
         },
         '@media (max-width:820px)': {
             width: '560px'
+        },
+        '@media (max-width:450px)': {
+            width: '340px'
         }
     },
     text: {
@@ -35,6 +38,9 @@ const useStyles = makeStyles((theme) => ({
         },
         '@media (max-width:820px)': {
             fontSize: '1.05rem'
+        },
+        '@media (max-width:450px)': {
+            fontSize: '0.9rem'
         }
     },
     expandButton: {
@@ -65,8 +71,8 @@ export default function Summary(props) {
                     Relevant competencies include 2 years of experience in troubleshooting G Suite (Google Workspace) products and a diploma in Computer Science with a focus on web development with PHP.
                     Naturally analytical, self-motivated, well-organized, able to perform under minimal supervision in accordance with deadlines, and a strong advocate for professional integrity.
                 </Typography>
-                <IconButton className={classes.expandButton}>
-                    <ExpandMore onClick={() => scrollToSection(props.headers.projects)} className={classes.expandIcon} />
+                <IconButton className={classes.expandButton} onClick={() => scrollToSection(props.headers.projects)}>
+                    <ExpandMore className={classes.expandIcon} />
                 </IconButton>
             </CardContent>
         </Card>

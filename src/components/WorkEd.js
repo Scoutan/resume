@@ -210,7 +210,7 @@ export default function WorkEd(props) {
 
   return (
     <Card className={classes.card} id={props.title} elevation={0}>
-      <HeaderBar icon={<History fontSize="large" />} title={props.title} />
+      <HeaderBar icon={<History />} title={props.title} />
       <FormGroup row className={classes.switches}>
         <FormControlLabel
           control={

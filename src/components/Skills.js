@@ -19,6 +19,13 @@ const useStyles = makeStyles((theme) => ({
         color: '#C5C6C7',
         textAlign: 'center'
     },
+    gridWidth: {
+        '@media (max-width:450px)': {
+            flexGrow: '0',
+            maxWidth: '100%',
+            flexBasis: '100%',
+        },
+    },
     listBG: {
         backgroundColor: 'rgba(255,255,255,0.05)',
         borderRadius: '20px'
@@ -80,10 +87,10 @@ export default function Skills(props) {
 
     return (
         <Card className={classes.card} id={props.title} elevation={0}>
-            <HeaderBar icon={<DeveloperMode fontSize="large" />} title={props.title} />      
+            <HeaderBar icon={<DeveloperMode />} title={props.title} />      
             <CardContent>
                 <Grid container spacing={3} alignItems="flex-start">
-                    <Grid item xs={6} sm={6} md={6}>            
+                    <Grid item xs={6} sm={6} md={6} className={classes.gridWidth}>            
                         <List className={classes.listBG}>
                             <ListItemTemplate alt="React logo" src="/React-icon.svg" title="React JS" desc="Create React App / Next.js" />
                             <Divider variant="inset" component="li" />
@@ -95,7 +102,7 @@ export default function Skills(props) {
                             <Divider variant="inset" component="li" />
                         </List>
                     </Grid>
-                    <Grid item xs={6} sm={6} md={6} >            
+                    <Grid item xs={6} sm={6} md={6} className={classes.gridWidth}>            
                         <List className={classes.listBG}>
                             <ListItemTemplate href='https://material-ui.com/' alt="Material UI logo" src="/mUI-icon.svg" title="Material-UI &#8594;" desc="React UI framework" />                            
                             <Divider variant="inset" component="li" />    
@@ -111,7 +118,7 @@ export default function Skills(props) {
                             <Divider variant="inset" component="li" />
                         </List>
                     </Grid>                    
-                    <Grid item xs={6} sm={6} md={4}>            
+                    <Grid item xs={6} sm={6} md={4} className={classes.gridWidth}>            
                         <List className={classes.listBG}>
                             <ListItemTemplate href="https://github.com/Scoutan" alt="GitHub logo" src="/GH-logo.svg" title="GitHub &#8594;" desc="My code repositories" />
                             <Divider variant="inset" component="li" />
@@ -122,7 +129,7 @@ export default function Skills(props) {
                             <ListItemTemplate href="https://code.visualstudio.com/" alt="Visual Studio Code logo" src="/VSC-logo.svg" title="Visual Studio Code &#8594;" desc="Source-code editor" />                       
                         </List>
                     </Grid>
-                    <Grid item xs={6} sm={6} md={4}>            
+                    <Grid item xs={6} sm={6} md={4} className={classes.gridWidth}>            
                         <List className={classes.listBG}>
                             <ListItemTemplate alt="Windows logo" src="/Windows-logo.svg" title="Windows" desc="My everyday OS" />
                             <Divider variant="inset" component="li" /> 
@@ -132,7 +139,7 @@ export default function Skills(props) {
                             <Divider variant="inset" component="li" />                                                      
                         </List>
                     </Grid>
-                    <Grid item xs={6} sm={6} md={4}>            
+                    <Grid item xs={6} sm={6} md={4} className={classes.gridWidth}>            
                         <List className={classes.listBG}> 
                             <ListItemTemplate href="https://workspace.google.com/" alt="G Suite logo" src="/G-logo.svg" title="G Suite &#8594;" desc="Troubleshooter for its apps" />
                             <Divider variant="inset" component="li" />
