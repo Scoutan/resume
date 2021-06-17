@@ -25,7 +25,8 @@ const useStyles = makeStyles((theme) => ({
             width: '560px'
         },
         '@media (max-width:450px)': {
-            width: '340px'
+            width: '340px',
+            padding: '0 0 20px 0',
         }
     },
     text: {
@@ -45,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     },
     expandButton: {
         margin: '30px 0 0 0',
-        transition: 'none'
+        transition: 'none',        
     },
     expandIcon: {
         fontSize: '100px',
