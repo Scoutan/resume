@@ -18,6 +18,11 @@ const useStyles = makeStyles((theme) => ({
         color: '#C5C6C7',
         textAlign: 'center'
     },
+    // icon: {
+    //     '@media (max-width:450px)': {
+    //         fontSize: '1.4rem'  
+    //     }
+    // },
     imageWrapper: {
         position: 'relative',
         height: '300px'
@@ -34,7 +39,7 @@ export default function Projects(props) {
 
     return (
         <Card className={classes.card} id={props.title} elevation={0}>
-            <HeaderBar icon={<Apps fontSize="large" />} title={props.title} />
+            <HeaderBar icon={<Apps className={classes.icon} />} title={props.title} />
             <CardContent>
                 <Grid 
                     container
