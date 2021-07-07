@@ -13,7 +13,7 @@ Naturally analytical, self-motivated, well-organized, able to perform under mini
 `;
 
 export const volkswagen = [
-    "Selected by the service manager to manage the body shop department and as the backup of the foreman of the garage.",
+    "Selected by the service manager to manage the body shop department and be the backup of the foreman of the garage.",
     "Receive customers to evaluate their needs and create a repair estimation using Audatex, a web app with an industry standardized format.",
     "Coordinate with partner body shop garages, based on the type of repair and deadline set by the insurance policies or customer.",
     "Perform quality control inspections on each vehicle prior its delivery to customer.",
