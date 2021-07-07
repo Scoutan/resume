@@ -1,13 +1,11 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import HeaderBar from '../components/HeaderBar'
 import TimelineView from '../components/TimelineView'
 import ClassicView from '../components/ClassicView'
 import { 
-  makeStyles, 
-  Paper, 
+  makeStyles,
   Card, CardContent,
-  Grid,
-  FormGroup, FormControlLabel, Switch,
+  FormGroup, FormControlLabel, Switch, Typography,
 } from '@material-ui/core'
 import { History } from '@material-ui/icons'
 
@@ -22,6 +20,10 @@ const useStyles = makeStyles({
   },
   switch: {
     justifyContent: 'center',
+    color: 'white'
+  },
+  labelPlacementTop: {
+    marginLeft: '24px'
   }
 });
 
@@ -42,9 +44,18 @@ export default function WorkEd(props) {
     }
   }
 
+  useEffect(() => {
+    if (window.innerWidth < 1024) {
+      return setView({ ...view, viewToggle: false, timelineView: 'none', classicView: 'block' })
+    } else {
+      return null
+    }
+  }, [])
+
   return (
     <Card className={classes.card} id={props.title} elevation={0}>
-      <HeaderBar icon={<History />} title={props.title} />
+      <HeaderBar icon={<History />} title={props.title} />      
+      <Typography variant="h6">View</Typography>
       <FormGroup row className={classes.switch}>
         <FormControlLabel
           control={
@@ -52,11 +63,12 @@ export default function WorkEd(props) {
               checked={view.viewToggle}
               onChange={() => toggleView()}
               name="View"
-              color="default"
+              color="primary"           
             />
           }
           label="Classic | Timeline"
           labelPlacement="top"
+          classes={{labelPlacementTop: classes.labelPlacementTop}}
         />
       </FormGroup>
       <CardContent>
