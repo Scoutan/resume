@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     listBG: {
-        backgroundColor: 'rgba(255,255,255,0.05)',
+        backgroundColor: 'rgba(255,255,255,0.15)',
         borderRadius: '20px'
     },
     links: {
@@ -38,6 +38,9 @@ const useStyles = makeStyles((theme) => ({
     },
     avatar: {
         objectFit: "contain"
+    },
+    desc: {
+        color: 'white'
     }
 }));
 
@@ -50,7 +53,7 @@ export default function Skills(props) {
         if (props.src) {
             avatar = <Avatar alt={props.alt} src={props.src} variant="square" classes={{img: classes.avatar}} />
         } else {
-            avatar = <Avatar variant="square" classes={{img: classes.avatar}}>{props.alt.charAt(0)}</Avatar>
+            avatar = <Avatar classes={{img: classes.avatar}}>{props.alt.charAt(0)}</Avatar>
         }
 
         if (props.href) {
@@ -65,7 +68,7 @@ export default function Skills(props) {
                         <a href={props.href} target="_blank" rel="noopener noreferrer" className={classes.links}>
                             <Typography component="span" className={classes.skillTitle}>{props.title}</Typography>
                         </a>
-                        <Typography>{props.desc}</Typography>
+                        <Typography className={classes.desc}>{props.desc}</Typography>
                     </ListItemText>                                
                 </ListItem>
             )
@@ -77,7 +80,7 @@ export default function Skills(props) {
                     </ListItemAvatar>                                
                     <ListItemText>
                         <Typography component="span" className={classes.skillTitle}>{props.title}</Typography>
-                        <Typography>{props.desc}</Typography>
+                        <Typography className={classes.desc}>{props.desc}</Typography>
                     </ListItemText>                                
                 </ListItem>
             )
@@ -89,59 +92,64 @@ export default function Skills(props) {
             <HeaderBar icon={<DeveloperMode />} title={props.title} />      
             <CardContent>
                 <Grid container spacing={3} alignItems="flex-start">
-                    <Grid item xs={6} sm={6} md={6} className={classes.gridWidth}>            
+                    <Grid item xs={6} lg={3} className={classes.gridWidth}>            
                         <List className={classes.listBG}>
-                            <ListItemTemplate alt="React logo" src="/React-icon.svg" title="React JS" desc="Create React App / Next.js" />
-                            <Divider variant="inset" component="li" />
-                            <ListItemTemplate alt="Redux logo" src="/redux-logo.png" title="Redux" desc="" />
+                            <ListItemTemplate alt="JavaScript" title="JavaScript" desc="" />                            
                             <Divider variant="inset" component="li" />
                             <ListItemTemplate alt="CSS3 logo" src="/CSS3-icon.svg" title="CSS3" desc="" />                            
                             <Divider variant="inset" component="li" />
-                            <ListItemTemplate alt="PHP logo" src="/PHP-logo.svg" title="PHP" desc="" />                         
+                            <ListItemTemplate alt="PHP logo" src="/PHP-logo.svg" title="PHP" desc="" />
                             <Divider variant="inset" component="li" />
+                            <ListItemTemplate alt="MySQL logo" src="/MySQL-logo.svg" title="MySQL" desc="" />
                         </List>
                     </Grid>
-                    <Grid item xs={6} sm={6} md={6} className={classes.gridWidth}>            
+                    <Grid item xs={6} lg={3} className={classes.gridWidth}>            
                         <List className={classes.listBG}>
+                            <ListItemTemplate alt="React logo" src="/React-icon.svg" title="React JS" desc="Front-end JavaScript library" />
+                            <Divider variant="inset" component="li" />  
+                            <ListItemTemplate href='https://nextjs.org/' alt="Next.js" src="/Nextjs-logo.svg" title="Next.js &#8594;" desc="React front-end web development framework" />                            
+                            <Divider variant="inset" component="li" />  
                             <ListItemTemplate href='https://material-ui.com/' alt="Material UI logo" src="/mUI-icon.svg" title="Material-UI &#8594;" desc="React UI framework" />                            
                             <Divider variant="inset" component="li" />    
-                            <ListItemTemplate href="https://semantic-ui.com/" alt="Semantic UI logo" src="/sUI-icon.png" title="Semantic-UI &#8594;" desc="React UI framework" />
-                            <Divider variant="inset" component="li" />
+                            {/* <ListItemTemplate href="https://semantic-ui.com/" alt="Semantic UI logo" src="/sUI-icon.png" title="Semantic-UI &#8594;" desc="React UI framework" />
+                            <Divider variant="inset" component="li" /> */}
                             <ListItemTemplate href="https://formik.org/" alt="Formik logo" src="/formik-logo.png" title="Formik &#8594;" desc="React form library" />
                             <Divider variant="inset" component="li" />
-                            <ListItemTemplate href="https://redux-form.com/" alt="Redux Form logo" src="/RF-logo.png" title="Redux Form &#8594;" desc="Managing forms in Redux" />
+                            <ListItemTemplate href="https://redux.js.org/" alt="Redux logo" src="/redux-logo.png" title="Redux &#8594;" desc="Application state management" />
                             <Divider variant="inset" component="li" />
+                            {/* <ListItemTemplate href="https://redux-form.com/" alt="Redux Form logo" src="/RF-logo.png" title="Redux Form &#8594;" desc="Managing forms in Redux" />
+                            <Divider variant="inset" component="li" /> */}
                             <ListItemTemplate href="https://cheerio.js.org/" alt="Cheerio JS" title="Cheerio JS &#8594;" desc="Markup parser" />
-                            <Divider variant="inset" component="li" />
-                            <ListItemTemplate href="https://github.com/typicode/json-server" alt="JSON server" title="JSON server &#8594;" desc="Fake REST API for testing" />
-                            <Divider variant="inset" component="li" />
+                            {/* <Divider variant="inset" component="li" />
+                            <ListItemTemplate href="https://github.com/typicode/json-server" alt="JSON server" title="JSON server &#8594;" desc="Fake REST API for testing" /> */}
                         </List>
                     </Grid>                    
-                    <Grid item xs={6} sm={6} md={4} className={classes.gridWidth}>            
+                    <Grid item xs={6} lg={3} className={classes.gridWidth}>            
                         <List className={classes.listBG}>
-                            <ListItemTemplate href="https://github.com/Scoutan" alt="GitHub logo" src="/GH-logo.svg" title="GitHub &#8594;" desc="My code repositories" />
+                            <ListItemTemplate href="https://git-scm.com/" alt="Git logo" src="/Git-logo.svg" title="Git &#8594;" desc="Software development collaboration" />
                             <Divider variant="inset" component="li" />
+                            {/* <ListItemTemplate href="https://github.com/Scoutan" alt="GitHub logo" src="/GH-logo.svg" title="GitHub &#8594;" desc="My code repositories" />
+                            <Divider variant="inset" component="li" /> */}
                             <ListItemTemplate href="https://www.vercel.com/" alt="Vercel logo" src="/vercel-logo.png" title="Vercel &#8594;" desc="App deployments & Next.js docs" />
                             <Divider variant="inset" component="li" />
-                            <ListItemTemplate href="https://www.heroku.com/" alt="Heroku logo" src="/Heroku-logo.svg" title="Heroku &#8594;" desc="App deployments" />
-                            <Divider variant="inset" component="li" />
+                            {/* <ListItemTemplate href="https://www.heroku.com/" alt="Heroku logo" src="/Heroku-logo.svg" title="Heroku &#8594;" desc="App deployments" />
+                            <Divider variant="inset" component="li" /> */}
                             <ListItemTemplate href="https://code.visualstudio.com/" alt="Visual Studio Code logo" src="/VSC-logo.svg" title="Visual Studio Code &#8594;" desc="Source-code editor" />                       
+                            <Divider variant="inset" component="li" />
+                            <ListItemTemplate href="https://www.eclipse.org/" alt="Eclipse logo" src="/Eclipse-logo.svg" title="Eclipse &#8594;" desc="Integrated development environment" />                       
                         </List>
                     </Grid>
-                    <Grid item xs={6} sm={6} md={4} className={classes.gridWidth}>            
+                    <Grid item xs={6} lg={3} className={classes.gridWidth}>            
                         <List className={classes.listBG}>
-                            <ListItemTemplate alt="Windows logo" src="/Windows-logo.svg" title="Windows" desc="My everyday OS" />
-                            <Divider variant="inset" component="li" /> 
+                            <ListItemTemplate alt="Windows logo" src="/Windows-logo.svg" title="Windows" desc="My computer OS" />
+                            <Divider variant="inset" component="li" />
+                            <ListItemTemplate alt="Android logo" src="/Android-logo.svg" title="Android OS" desc="My smartphone OS" />
+                            <Divider variant="inset" component="li" />
+                            <ListItemTemplate alt="Android-x86 logo" src="/Android-x86.png" title="Android-x86" desc="My Android OS playground on PC" />
+                            <Divider variant="inset" component="li" />
                             <ListItemTemplate alt="Linux logo" src="/linux-logo.svg" title="Linux" desc="WSL / Ubuntu" />
                             <Divider variant="inset" component="li" />
                             <ListItemTemplate alt="MacOS logo" src="/MacOS-logo.svg" title="MacOS" desc="For compatibility testing" />
-                            <Divider variant="inset" component="li" />                                                      
-                        </List>
-                    </Grid>
-                    <Grid item xs={6} sm={6} md={4} className={classes.gridWidth}>            
-                        <List className={classes.listBG}> 
-                            <ListItemTemplate href="https://workspace.google.com/" alt="G Suite logo" src="/G-logo.svg" title="G Suite &#8594;" desc="Troubleshooter for its apps" />
-                            <Divider variant="inset" component="li" />
                         </List>
                     </Grid>
                 </Grid>
