@@ -23,6 +23,7 @@ const useStyles = makeStyles({
     },
     title: {
         color: '#66FCF1',
+        textDecoration: 'none',
         '@media (max-width:450px)': {
             fontSize: '2rem'
         }
@@ -36,9 +37,11 @@ export default function Projects(props) {
         switch (props.type) {
             case 'info':
                 return (
-                    <Grid item xs={5} sm={5}>
-                        <Typography gutterBottom variant="h3" className={classes.title}>
-                            {props.title}
+                    <Grid item xs={5} sm={4}>
+                        <Typography gutterBottom variant="h4">
+                            <a className={classes.title} href={props.href} target="_blank" rel="noopener noreferrer">
+                                {props.title}
+                            </a>
                         </Typography>
                         <Typography variant="body1">
                             {props.desc}
@@ -47,7 +50,7 @@ export default function Projects(props) {
                 )
             case 'image':
                 return (
-                    <Grid item xs={5} sm={5} className={classes.imageWrapper}>                     
+                    <Grid item xs={5} sm={4} className={classes.imageWrapper}>                     
                         <a href={props.href} target="_blank" rel="noopener noreferrer">
                             <Image 
                                 src={props.src}
@@ -65,7 +68,7 @@ export default function Projects(props) {
         <Card className={classes.card} id={props.title} elevation={0}>
             <HeaderBar icon={<Apps />} title={props.title} />
             <CardContent>
-                <Grid container spacing={2} justify="space-evenly" alignItems="center">
+                <Grid container spacing={3} justify="center" alignItems="center">
                     <ProjectsTemplate
                         type="image"
                         href="https://chuko-cra.vercel.app/"
@@ -74,14 +77,16 @@ export default function Projects(props) {
                     />
                     <ProjectsTemplate
                         type="info"
-                        title="Chuko"
-                        desc="My personal React project"
+                        href="https://chuko-cra.vercel.app/"
+                        title="&#8592; Chuko"
+                        desc="My first personal project with web scraping functionality, created using Create React App, plain CSS, and Cheerio JS."
                     />
                     <Grid item xs={12} />
                     <ProjectsTemplate
                         type="info"
-                        title="Compilation of apps"
-                        desc="From Stephen Grider's React/Redux course"
+                        href="https://stephen-grider.vercel.app/"
+                        title="Compilation of apps &#8594;"
+                        desc="My compilation of the apps built in the online course “Modern React with Redux” on Udemy, put together using Next.js."
                     />
                     <ProjectsTemplate
                         type="image"
