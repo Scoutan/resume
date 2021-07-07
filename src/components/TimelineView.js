@@ -12,6 +12,7 @@ import {
 import {
   Timeline
 } from '@material-ui/lab'
+import { volkswagen, telus, concordiaTA, entechnevision } from '../components/Constants'
 
 const useStyles = makeStyles({
   timelineView: props => ({
@@ -20,7 +21,8 @@ const useStyles = makeStyles({
   }),
   switches: {
     justifyContent: 'center',
-    margin: '0 0 30px 0'
+    margin: '0 0 30px 0',
+    color: 'white'
   },
 });
 
@@ -97,67 +99,80 @@ export default function TimelineView({ view }) {
         <TimelineViewTemplate
           type="school"
           icon={<School />}
-          eventTime="2020-Present"
-          eventEmployer="Self-study"
-          eventTitle="React JS"
-          eventDesc="Learning React JS through online courses and practice on personal projects"
+          eventTime="Completed in Sept 2020"
+          eventEmployer="Udemy"
+          eventTitle='"Modern React with Redux"'
+          eventDesc="52 hours online course by Stephen Grider"
         />
         <TimelineViewTemplate type="year" year="2020"/>
         <TimelineViewTemplate
           type="work"
           icon={<WorkOutline />}
-          eventTime="2018-2020"
+          eventTime="May 2018 - Apr 2020"
           eventEmployer="Centre-Ville Volkswagen"
           eventTitle="Body Shop / Warranty Administrator"
-          eventDesc="Handle car insurance claims and warranty claims"
+          eventDesc={volkswagen}
         />
         <TimelineViewTemplate type="year" year="2018"/>
         <TimelineViewTemplate
-          type="work"
-          icon={<WorkOutline />}
-          eventTime="2016-2018"
-          eventEmployer="TELUS"
-          eventTitle="Business Help Desk Specialist III"
-          eventDesc="Troubleshoot G Suite apps (e.g. Gmail, Calendar, Drive) for businesses"
+          type="school-work"
+
+          schoolTime="Completed in Apr 2018"
+          schoolEmployer="TELUS (vendor for Google Suite)"
+          schoolTitle='"CEB Effortless Experience"'
+          schoolDesc="Gartner’s customer service training, offered by Google"
+
+          workTime="Sept 2016 - May 2018"
+          workEmployer="TELUS (vendor for Google Suite)"
+          workTitle="Business Help Desk Specialist III"
+          workDesc={telus}
         />
         <TimelineViewTemplate type="year" year="2016"/>      
         <TimelineViewTemplate 
           type="school-work"
 
-          schoolTime="2014-2016"
+          schoolTime="2014-2016 (on leave)"
           schoolEmployer="Concordia University"
           schoolTitle="M.A. in Philosophy"
-          schoolDesc="Research paper yet to be completed"
+          schoolDesc='Research topic: "Norms in Science"'
 
-          workTime="2015-2016"
+          workTime="Jan 2015 - May 2016"
           workEmployer="Concordia University"
-          workTitle="Teaching Assistant for [Critical Thinking]"
-          workDesc="Support and evaluate students"
+          workTitle='Teaching Assistant for "Critical Thinking"'
+          workDesc={concordiaTA}
         />
         <TimelineViewTemplate type="year" year="2014"/> 
         <TimelineViewTemplate 
           type="school"
           icon={<School />}
-          eventTime="2011-2014"
+          eventTime="Awarded in 2014"
           eventEmployer="Concordia University"
           eventTitle="B.A. in Philosophy"
-          eventDesc="Study"
+          eventDesc="Completed with Honours program’s criteria"
         />
         <TimelineViewTemplate type="year" year="2011"/> 
         <TimelineViewTemplate 
           type="school-work"
 
-          workTime="2011"
+          workTime="May 2010 - Aug 2010"
           workEmployer="EnTechneVision"
           workTitle="Web Developer junior"
-          workDesc="Using PHP, JS, and JQuery, for email newsletters and several website projects"
+          workDesc={entechnevision}
       
-          schoolTime="2006-2011"
-          schoolEmployer="Champlain Regional College St-Lambert"
+          schoolTime="Awarded in 2011"
+          schoolEmployer="Champlain College St-Lambert"
           schoolTitle="D.C.S. Computer Science Technology"
-          schoolDesc="Study"
+          schoolDesc="Includes 12 weeks internship"
         />
-        <TimelineViewTemplate type="year" year="2006"/>            
+        <TimelineViewTemplate type="year" year="2006"/>
+        <TimelineViewTemplate 
+          type="school"
+          icon={<School />}
+          eventTime="Awarded in 2006"
+          eventEmployer="École secondaire Antoine-Brossard"
+          eventTitle="Diploma of Secondary Studies"
+          eventDesc="High school studies"
+        />          
       </Timeline>
     </DisplayContext.Provider>
   )

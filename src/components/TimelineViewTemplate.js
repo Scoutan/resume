@@ -5,14 +5,12 @@ import {
     Paper,
     Typography,
     Divider,
-    FormGroup, FormControlLabel, Switch,
   } from '@material-ui/core'
   import {
     School,
     WorkOutline
   } from '@material-ui/icons'
   import {
-    Timeline,
     TimelineItem,
     TimelineSeparator,
     TimelineConnector,
@@ -65,7 +63,6 @@ const useStyles = makeStyles({
     },
 });
 
-
 export default function TimelineViewTemplate(props) {
     const theState = useContext(DisplayContext);
     const classes = useStyles(theState);
@@ -73,7 +70,7 @@ export default function TimelineViewTemplate(props) {
     switch (props.type) {
       case 'work':
         return (
-          <TimelineItem>
+          <TimelineItem key={Math.random().toString(36).substr(2, 9)}>
             <TimelineOppositeContent className={classes.eventSchoolBox} />
             <TimelineSeparator>
               <TimelineConnector />
@@ -87,14 +84,14 @@ export default function TimelineViewTemplate(props) {
                 <Typography variant="h5" className={classes.eventTitle}>{props.eventTitle}</Typography>
                 <Typography variant="h5" className={classes.eventTime}>{props.eventTime}</Typography>                
                 <Typography variant="subtitle2">{props.eventEmployer}</Typography>
-                <Typography className={classes.eventDesc}>{props.eventDesc}</Typography>
+                {props.eventDesc.map(desc => <Typography align="left" key={Math.random().toString(36).substr(2, 9)}>&#8226; {desc}</Typography>)}
               </Paper>
             </TimelineContent>
           </TimelineItem> 
         )
       case 'school':
         return (
-          <TimelineItem>
+          <TimelineItem key={Math.random().toString(36).substr(2, 9)}>
             <TimelineOppositeContent className={classes.eventSchoolBox}>
               <Paper elevation={3} className={classes.schoolInfo}>
                 <Typography variant="h5" className={classes.eventTitle}>{props.eventTitle}</Typography>
@@ -115,7 +112,7 @@ export default function TimelineViewTemplate(props) {
         )
       case 'school-work':
         return (
-          <TimelineItem>
+          <TimelineItem key={Math.random().toString(36).substr(2, 9)}>
             <TimelineOppositeContent className={classes.eventSchoolBox}>
               <Paper elevation={3} className={classes.schoolInfo}>
                 <Typography variant="h5" className={classes.eventTitle}>{props.schoolTitle}</Typography>
@@ -142,14 +139,14 @@ export default function TimelineViewTemplate(props) {
                 <Typography variant="h5" className={classes.eventTitle}>{props.workTitle}</Typography>
                 <Typography variant="h5" className={classes.eventTime}>{props.workTime}</Typography>                
                 <Typography variant="subtitle2">{props.workEmployer}</Typography>
-                <Typography>{props.workDesc}</Typography>
+                {props.workDesc.map(desc => <Typography align="left" key={Math.random().toString(36).substr(2, 9)}>&#8226; {desc}</Typography>)}
               </Paper>
             </TimelineContent>
           </TimelineItem> 
         )
       case 'year':
         return (
-          <TimelineItem>
+          <TimelineItem key={Math.random().toString(36).substr(2, 9)}>
             <TimelineOppositeContent className={classes.eventSchoolBox} />
             <TimelineSeparator>
               <Typography variant="h4" component="div" className={classes.year}>
