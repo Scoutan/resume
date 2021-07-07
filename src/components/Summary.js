@@ -6,6 +6,7 @@ import {
     Typography
 } from '@material-ui/core'
 import { ExpandMore } from '@material-ui/icons'
+import { summary } from '../components/Constants'
 
 const useStyles = makeStyles((theme) => ({
     card: {
@@ -68,9 +69,7 @@ export default function Summary(props) {
         <Card className={classes.card} elevation={0}>
             <CardContent>
                 <Typography className={classes.text} variant="h6" align="center" gutterBottom>
-                    Freshly self-taught Front-End React Developer with a proven record in troubleshooting and problem solving.
-                    Relevant competencies include 2 years of experience in troubleshooting G Suite (Google Workspace) products and a diploma in Computer Science with a focus on web development with PHP.
-                    Naturally analytical, self-motivated, well-organized, able to perform under minimal supervision in accordance with deadlines, and a strong advocate for professional integrity.
+                    {summary}
                 </Typography>
                 <IconButton className={classes.expandButton} onClick={() => scrollToSection(props.headers.projects)}>
                     <ExpandMore className={classes.expandIcon} />
